@@ -24,7 +24,7 @@ int division(int a, int b)
     else
     {
         printf("Error: Division by zero is not allowed.\n");
-        return -1; // Return an error value
+         // Return an error value
     }
 }
 
@@ -78,37 +78,4 @@ int main(void)
   
 
 }
-
-    // switch(menuselection)
-    // {
-    //     case 1:
-    //         c = a + b;
-    //         printf("Sum of %d and %d is %d\n", a, b, c);
-    //         break;
-    //     case 2:
-    //         c = a - b;
-    //         printf("Difference of %d and %d is %d\n", a, b, c);
-    //         break;
-    //     case 3:
-    //         c = a * b;
-    //         printf("Product of %d and %d is %d\n", a, b, c);
-    //         break;
-    //     case 4:
-    //         if(b != 0)
-    //         {
-    //             c = a / b;
-    //             printf("Quotient of %d and %d is %d\n", a, b, c);
-    //         }
-    //         else
-    //         {
-    //             printf("Error: Division by zero is not allowed.\n");
-    //         }
-    //         break;
-    //     case 0:
-    //         printf("Exiting the calculator.\n");
-    //         break;
-    //     default:
-    //         printf("Invalid choice. Please try again.\n");
-    // }
-
 }

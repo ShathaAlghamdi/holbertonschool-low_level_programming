@@ -32,8 +32,12 @@ int main(void)
 {
     int a, b, menuselection;
     printf(" welcome to the simple calculator\n");
-    printf(" Simple Calculator \n 1) Add \n  2) Subtract \n 3) Multiply \n 4) Divide \n 0) Quit");
-    scanf("%d", &menuselection);
+    printf(" Simple Calculator \n 1) Add \n  2) Subtract \n 3) Multiply \n 4) Divide \n 0) Quit \n");
+    // scanf("%d", &menuselection);
+    while (menuselection != 0)
+    {
+        printf("Enter your choice: ");
+        scanf("%d", &menuselection);
     if (menuselection == 1)
     {
          printf("Enter two numbers: ");
@@ -65,11 +69,16 @@ int main(void)
     else if (menuselection == 0)
     {
         printf("Exiting the calculator.\n");
+        break;
     }
     else
     {
         printf("Invalid choice. Please try again.\n");
     }
+  
+
+}
+
     // switch(menuselection)
     // {
     //     case 1:
@@ -101,5 +110,5 @@ int main(void)
     //     default:
     //         printf("Invalid choice. Please try again.\n");
     // }
-    return 0;
+
 }

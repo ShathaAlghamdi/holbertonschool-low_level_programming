@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/shathaalghamdi/github/holbertonschool-low_level_programming-1/ simple-calculator/calculator'
+relocations:     []
+...

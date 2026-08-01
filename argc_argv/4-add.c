@@ -24,7 +24,9 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-		sum += atoi(argv[i]);
+		sum += atoi(argv[i]); /*atoi() stands for ASCII to Integer.
+
+It is a function from the C standard library (stdlib.h) that converts a string into an integer.*/
 	}
 
 	printf("%d\n", sum);

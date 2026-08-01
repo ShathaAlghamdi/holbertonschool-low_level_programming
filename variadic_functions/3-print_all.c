@@ -2,15 +2,65 @@
 #include <stdio.h>
 
 /**
- * print_all - prints values according to a format string
- * @format: string containing argument type identifiers
+ * print_char - prints a character
+ * @args: list of arguments
+ */
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_int - prints an integer
+ * @args: list of arguments
+ */
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_float - prints a float
+ * @args: list of arguments
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - prints a string
+ * @args: list of arguments
+ */
+void print_string(va_list args)
+{
+	char *str;
+
+	str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(nil)";
+
+	printf("%s", str);
+}
+
+/**
+ * print_all - prints anything
+ * @format: list of argument types
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
 	unsigned int i;
+	unsigned int j;
 	char *separator;
-	char *str;
+	va_list args;
+
+	type_t types[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string}
+	};
 
 	i = 0;
 	separator = "";
@@ -19,30 +69,18 @@ void print_all(const char * const format, ...)
 
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == 'c')
-		{
-			printf("%s%c", separator, va_arg(args, int));
-			separator = ", ";
-		}
-		if (format[i] == 'i')
-		{
-			printf("%s%d", separator, va_arg(args, int));
-			separator = ", ";
-		}
-		if (format[i] == 'f')
-		{
-			printf("%s%f", separator, va_arg(args, double));
-			separator = ", ";
-		}
-		if (format[i] == 's')
-		{
-			str = va_arg(args, char *);
+		j = 0;
 
-			if (str == NULL)
-				str = "(nil)";
+		while (j < 4)
+		{
+			if (format[i] == types[j].type)
+			{
+				printf("%s", separator);
+				types[j].func(args);
+				separator = ", ";
+			}
 
-			printf("%s%s", separator, str);
-			separator = ", ";
+			j++;
 		}
 
 		i++;

@@ -9,7 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	(void)argv;
+	(void)argv; /* without this part the system will flag a warning: unused parameter 'argv' bcuz we didn't use argv
+	and this line of code says to the compiler that we intentionally are not using it */
 
 	printf("%d\n", argc - 1);
 

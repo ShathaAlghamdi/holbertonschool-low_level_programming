@@ -26,3 +26,4 @@ ht->array = calloc(size, sizeof(hash_node_t *));
 
 	return (ht);
 }
+

@@ -1,22 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
-/** * _puts_recursion - prints a string followed by a new line
- * @s: string to print
- * Return: nothing
+
+/**
+ * _puts_recursion - Prints a string followed by a new line
+ * @s: String to print
+ *
+ * Return: Nothing
  */
 void _puts_recursion(char *s)
 {
-    /* إذا وصلنا لنهاية string */
-    if (*s == '\0')
-    {
-        _putchar('\n');
-        return;
-    }
+	/* إذا وصلنا لنهاية الـ string */
+	if (*s == '\0')
+	{
+		_putchar('\n');
+		return;
+	}
 
-    /* اطبع الحرف الحالي */
-    _putchar(*s);
+	/* اطبع الحرف الحالي */
+	_putchar(*s);
 
-    /* روح للحرف التالي : my recursion part  */
-    _puts_recursion(s + 1);
+	/* My recursion part: روح للحرف التالي */
+	_puts_recursion(s + 1);
 }
